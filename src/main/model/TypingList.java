@@ -10,9 +10,9 @@ import java.util.List;
 
 // Represents list of excerpts that players will type
 public class TypingList {
-    private List<String> excerpts;
-    private List<String> authors;
-    private Random random = new Random();
+    private final List<String> excerpts;
+    private final List<String> authors;
+    private final Random random = new Random();
 
     // MODIFIES: this
     // EFFECTS: Initializes TypingList by importing text file

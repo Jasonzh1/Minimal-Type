@@ -41,6 +41,7 @@ public class TerminalGame {
         System.exit(0);
     }
 
+    // EFFECTS: Refreshes game state every Game.TICKS_PER_SECOND
     private void tick() throws IOException {
         handleUserInput();
 
@@ -51,6 +52,7 @@ public class TerminalGame {
         screen.refresh();
     }
 
+    // EFFECTS: Polls environment for user input and handles accordingly
     private void handleUserInput() throws IOException {
         KeyStroke stroke = screen.pollInput();
 
@@ -70,6 +72,7 @@ public class TerminalGame {
         }
     }
 
+    // EFFECTS: Renders game environment
     private void render() {
         if (game.isInGame()) {
             renderGame();
@@ -78,6 +81,7 @@ public class TerminalGame {
         }
     }
 
+    // EFFECTS: Renders typing game state
     private void renderGame() {
         drawString("Timer " + game.getTimer(), TextColor.ANSI.CYAN, 5, 5);
         String typed = game.getTypedPortion();
@@ -89,11 +93,14 @@ public class TerminalGame {
         drawString(untyped, TextColor.ANSI.WHITE, untypedStart, 20);
     }
 
+    // EFFECTS: Renders menu state
     private void renderMenu() {
         drawString("Choose difficulty level (Words-Per-Minute): ", TextColor.ANSI.WHITE, 10, 15);
         drawString("1. 15   2. 30   3. 50   4. 80   5. 100   6. Exit Game", TextColor.ANSI.WHITE, 10, 20);
     }
 
+    // Taken from Lab #4
+    // EFFECTS: Calls drawCharacter with each individual character
     private void drawString(String s, TextColor c, int startX, int y) {
         char[] chars = s.toCharArray();
 
@@ -102,7 +109,8 @@ public class TerminalGame {
         }
     }
 
-
+    // Taken from Lab #4
+    // EFFECTS: Uses Lanterna to render each character with a specific colour
     private void drawCharacter(char c, TextColor color, int x, int y) {
         TextGraphics text = screen.newTextGraphics();
         text.setForegroundColor(color);

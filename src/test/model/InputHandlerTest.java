@@ -8,7 +8,7 @@ import java.util.List;
 
 public class InputHandlerTest {
     InputHandler tester;
-    List<Paragraph> testExcerpts = new ArrayList<Paragraph>();
+    List<Paragraph> testExcerpts = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
