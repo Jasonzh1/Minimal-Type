@@ -46,9 +46,8 @@ public class Game {
     }
 
     // MODIFIES: this
-    // EFFECTS: Ticks timer and checks current game state. Returns false if level
-    // failed, true otherwise.
-    public boolean tick() {
+    // EFFECTS: Ticks timer and checks current game state.
+    public void tick() {
         counter++;
         if (counter >= 45) {
             timer--;
@@ -57,15 +56,13 @@ public class Game {
 
         if (timer <= 0) {
             inGame = false;
-            return false;
+            return;
         }
 
         if (currentParagraph.isFinished()) {
             inGame = false;
-            return true;
         }
 
-        return true;
     }
 
 

@@ -45,7 +45,9 @@ public class TerminalGame {
     private void tick() throws IOException {
         handleUserInput();
 
-        game.tick();
+        if (game.isInGame()) {
+            game.tick();
+        }
 
         screen.clear();
         render();
@@ -91,10 +93,16 @@ public class TerminalGame {
 
         drawString(typed, TextColor.ANSI.CYAN, wordStart, 20);
         drawString(untyped, TextColor.ANSI.WHITE, untypedStart, 20);
+        drawString("- " + game.getAuthor(), TextColor.ANSI.WHITE, 10, 30);
     }
 
     // EFFECTS: Renders menu state
     private void renderMenu() {
+        if (game.getTimer() == 0) {
+            drawString("Good Try! You'll get it next time!", TextColor.ANSI.WHITE, 10, 10);
+        } else if (game.getTimer() > 0) {
+            drawString("Congratulations on completing the level!", TextColor.ANSI.WHITE, 10, 10);
+        }
         drawString("Choose difficulty level (Words-Per-Minute): ", TextColor.ANSI.WHITE, 10, 15);
         drawString("1. 15   2. 30   3. 50   4. 80   5. 100   6. Exit Game", TextColor.ANSI.WHITE, 10, 20);
     }
