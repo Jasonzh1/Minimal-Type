@@ -1,8 +1,8 @@
-package model;
+package model.tools;
 
 // Paragraph that appears in the typing environment. Keeps track of current typing position.
 public class Paragraph {
-    private final String paragraph;
+    private String paragraph;
     private final String author;
     private int index;
     private int wordCount;
@@ -40,12 +40,20 @@ public class Paragraph {
         return (index >= paragraph.length());
     }
 
+    // EFFECTS: Returns substring of paragraph that is typed
     public String getTypedPortion() {
         return this.paragraph.substring(0, index);
     }
 
+    // EFFECTS: Returns substring of paragraph that is not yet typed
     public String getUntypedPortion() {
         return this.paragraph.substring(index);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Removes all periods from paragraph
+    public void removePeriods() {
+        paragraph = paragraph.replace(".", "");
     }
 
     public int getIndex() {

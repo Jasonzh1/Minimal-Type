@@ -13,6 +13,5 @@ keyboards.
 - As a user, I want to be able to select the level from a list of difficulties.
 - As a user, I want to be able to pickup items and add them to an inventory.
 - As a user, I want to be able to view a list of items in my inventory.
-- As a user, I want to be able to interact with different people and bosses.
 - As a user, I want to be able to have a smooth typing interface to fight bosses.
 

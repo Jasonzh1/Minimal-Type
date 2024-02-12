@@ -1,5 +1,7 @@
 package model;
 
+import model.tools.InputHandler;
+import model.tools.Paragraph;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

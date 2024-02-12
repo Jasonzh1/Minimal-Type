@@ -1,5 +1,9 @@
 package model;
 
+import model.tools.InputHandler;
+import model.tools.Paragraph;
+import model.tools.TypingList;
+
 import java.io.IOException;
 
 // Handles game behavior every tick
@@ -8,14 +12,14 @@ public class Game {
     public static final int[] WORDS_PER_MINUTE = {15, 30, 50, 80, 100};
 
     private boolean inGame;
-    private int timer;
+    protected int timer;
     private int counter;
 
     private boolean gameOver = false;
 
     private final InputHandler inputHandler;
     private final TypingList typingList;
-    private Paragraph currentParagraph;
+    protected Paragraph currentParagraph;
 
     // EFFECTS: Initializes a new game in the menu state
     public Game() throws IOException {
@@ -32,7 +36,7 @@ public class Game {
     // EFFECTS: Begins game with new paragraph and sets difficulty. Ends game if 6 is
     // selected
     public void initializeGame(int select) {
-        if (select == 6) {
+        if (select == 7) {
             gameOver = true;
             return;
         }
@@ -70,6 +74,12 @@ public class Game {
     // EFFECTS: Uses inputHandler to handle user input
     public void handleInput(char c) {
         inputHandler.handleInput(c);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Resets timer to -1
+    public void resetTimer() {
+        timer = -1;
     }
 
     public String getAuthor() {

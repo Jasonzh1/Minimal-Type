@@ -1,6 +1,5 @@
-package model;
+package model.tools;
 
-import java.awt.*;
 import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
