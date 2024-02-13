@@ -26,6 +26,7 @@ public class CherryRedTest {
     void performAbilityTest() throws IOException {
         Game game = new Game();
         game.initializeGame(1);
+        assertEquals(0, game.getPosition());
 
         cherryRed.perfromAbility(game);
 

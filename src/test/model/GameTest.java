@@ -91,5 +91,7 @@ public class GameTest {
     @Test
     void getCurrentParagraphTest() {
         assertNull(tester.getCurrentParagraph());
+        tester.initializeGame(1);
+        assertNotNull(tester.getCurrentParagraph());
     }
 }

@@ -31,9 +31,9 @@ public class Game {
         this.currentParagraph = null;
     }
 
-    // REQUIRES: Valid select between 1-6
+    // REQUIRES: Valid select between 1-5, 7
     // MODIFIES: this
-    // EFFECTS: Begins game with new paragraph and sets difficulty. Ends game if 6 is
+    // EFFECTS: Begins game with new paragraph and sets difficulty. Ends game if 7 is
     // selected
     public void initializeGame(int select) {
         if (select == 7) {
