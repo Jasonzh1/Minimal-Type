@@ -17,7 +17,7 @@ public class TypingListTest {
 
 
     @Test
-    void typingListTest() throws IOException {
+    void typingListTest() {
         assertNotNull(tester.getExcerpts());
         assertNotNull(tester.getAuthors());
     }
@@ -25,13 +25,14 @@ public class TypingListTest {
 
     @Test
     void getNewExcerptTest() {
-        assertNotEquals("", tester.getNewExcerpt().getParagraph());
-        assertNotEquals(' ', tester.getNewExcerpt().getNextCharacter());
+        assertTrue(tester.getExcerpts().contains(tester.getNewExcerpt().getUntypedPortion()));
+        assertTrue(tester.getExcerpts().contains(tester.getNewExcerpt().getUntypedPortion()));
+
     }
 
 
     @Test
-    void getExceprtsTest() {
+    void getExcerptsTest() {
         assertEquals(10, tester.getExcerpts().size());
     }
 
