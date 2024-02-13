@@ -29,4 +29,15 @@ public class TypingListTest {
         assertNotEquals(' ', tester.getNewExcerpt().getNextCharacter());
     }
 
+
+    @Test
+    void getExceprtsTest() {
+        assertEquals(10, tester.getExcerpts().size());
+    }
+
+
+    @Test
+    void getAuthorsTest() {
+        assertEquals(10, tester.getAuthors().size());
+    }
 }

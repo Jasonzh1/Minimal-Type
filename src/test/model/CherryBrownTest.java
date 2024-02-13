@@ -1,5 +1,5 @@
 package model;
-
+import model.tools.*;
 
 import org.junit.jupiter.api.*;
 
@@ -26,7 +26,11 @@ public class CherryBrownTest {
     void performAbilityTest() throws IOException {
         Game game = new Game();
         game.initializeGame(1);
+        Paragraph para = game.getCurrentParagraph();
+        para.removePeriods();
 
         cherryBrown.perfromAbility(game);
+
+        assertEquals(para.getUntypedPortion(), game.getUntypedPortion());
     }
 }

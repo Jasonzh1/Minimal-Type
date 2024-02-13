@@ -110,4 +110,8 @@ public class Game {
         return currentParagraph.getIndex();
     }
 
+    public Paragraph getCurrentParagraph() {
+        return currentParagraph;
+    }
+
 }
