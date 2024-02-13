@@ -5,6 +5,8 @@ import org.junit.jupiter.api.*;
 
 import java.io.IOException;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.nio.file.Files;
@@ -12,10 +14,14 @@ import java.nio.file.Path;
 
 public class TypingListTest {
     TypingList tester;
+    List<String> excerptTest;
+    List<String> authorTest;
 
     @BeforeEach
     void setTester() throws IOException{
         tester = new TypingList();
+        excerptTest = Files.readAllLines(Path.of("src/excerpts.txt"));
+        authorTest = Files.readAllLines(Path.of("src/authors.txt"));
     }
 
 
@@ -23,29 +29,17 @@ public class TypingListTest {
     void typingListTest() throws IOException {
         assertNotNull(tester.getExcerpts());
         assertNotNull(tester.getAuthors());
-        assertEquals(Files.readAllLines(Path.of("src/excerpts.txt")), tester.getExcerpts());
-        assertEquals(Files.readAllLines(Path.of("src/authors.txt")), tester.getAuthors());
+        assertEquals(excerptTest, tester.getExcerpts());
+        assertEquals(authorTest, tester.getAuthors());
     }
 
 
     @Test
     void getNewExcerptTest() {
-        assertTrue(tester.getExcerpts().contains(tester.getNewExcerpt().getUntypedPortion()));
-        assertTrue(tester.getExcerpts().contains(tester.getNewExcerpt().getUntypedPortion()));
+        assertTrue(excerptTest.contains(tester.getNewExcerpt().getUntypedPortion()));
+        assertTrue(authorTest.contains(tester.getNewExcerpt().getAuthor()));
 
     }
 
 
-    @Test
-    void getExcerptsTest() throws IOException {
-        assertEquals(10, tester.getExcerpts().size());
-        assertEquals(Files.readAllLines(Path.of("src/excerpts.txt")), tester.getExcerpts());
-    }
-
-
-    @Test
-    void getAuthorsTest() throws IOException{
-        assertEquals(10, tester.getAuthors().size());
-        assertEquals(Files.readAllLines(Path.of("src/authors.txt")), tester.getAuthors());
-    }
 }

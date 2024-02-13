@@ -9,10 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CherryBrownTest {
     CherryBrown cherryBrown;
+    Game testGame;
+    Game testGame2;
 
     @BeforeEach
-    void setCherryBlue() {
+    void setCherryBlue() throws IOException{
         cherryBrown = new CherryBrown();
+        testGame = new Game();
+        testGame2 = new Game();
+        testGame.initializeGame(1);
+        testGame2.initializeGame(3);
     }
 
     @Test
@@ -23,15 +29,16 @@ public class CherryBrownTest {
 
 
     @Test
-    void performAbilityTest() throws IOException {
-        Game game = new Game();
-        game.initializeGame(1);
-        Paragraph para = game.getCurrentParagraph();
-        para.removePeriods();
-        assertEquals(para, game.getCurrentParagraph());
+    void performAbilityTest() {
+        Paragraph para1 = testGame.getCurrentParagraph();
+        Paragraph para2 = testGame2.getCurrentParagraph();
+        para1.removePeriods();
+        para2.removePeriods();
 
-        cherryBrown.perfromAbility(game);
+        cherryBrown.perfromAbility(testGame);
+        cherryBrown.perfromAbility(testGame2);
 
-        assertEquals(para.getUntypedPortion(), game.getUntypedPortion());
+        assertEquals(para1.getParagraph(), testGame.getUntypedPortion());
+        assertEquals(para2.getParagraph(), testGame2.getUntypedPortion());
     }
 }
