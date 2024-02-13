@@ -1,7 +1,6 @@
 package model;
 
 import model.tools.Inventory;
-import model.tools.TypingList;
 import org.junit.jupiter.api.*;
 
 
@@ -46,6 +45,7 @@ public class InventoryTest {
 
     @Test
     void useItemTest() {
+        tester.addRandomItem();
         tester.addRandomItem();
         tester.addRandomItem();
         tester.addRandomItem();

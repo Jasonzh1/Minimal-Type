@@ -44,12 +44,25 @@ public class GameTest {
         tester.initializeGame(2);
         int currentTime = tester.getTimer();
 
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 45; i++) {
             tester.tick();
         }
 
-        assertEquals(currentTime-1, tester.getTimer());
+        assertEquals(currentTime - 1, tester.getTimer());
         assertTrue(tester.isInGame());
+    }
+
+    @Test
+    void tickTest2() {
+        tester.initializeGame(2);
+        int currentTime = tester.getTimer();
+
+        for (int i = 0; i < currentTime * 45; i++) {
+            tester.tick();
+        }
+
+        assertEquals(0, tester.getTimer());
+        assertFalse(tester.isInGame());
     }
 
 
@@ -73,5 +86,10 @@ public class GameTest {
     void getAuthorTest() {
         tester.initializeGame(1);
         assertNotEquals("", tester.getAuthor());
+    }
+
+    @Test
+    void getCurrentParagraphTest() {
+        assertNull(tester.getCurrentParagraph());
     }
 }
