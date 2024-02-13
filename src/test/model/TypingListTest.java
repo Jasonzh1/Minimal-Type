@@ -18,7 +18,8 @@ public class TypingListTest {
 
     @Test
     void typingListTest() throws IOException {
-        TypingList tester2 = new TypingList();
+        assertNotNull(tester.getExcerpts());
+        assertNotNull(tester.getAuthors());
     }
 
 

@@ -26,4 +26,12 @@ public class TypingList {
         return new Paragraph(excerpts.get(num), authors.get(num));
     }
 
+    public List<String> getExcerpts() {
+        return excerpts;
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
 }
