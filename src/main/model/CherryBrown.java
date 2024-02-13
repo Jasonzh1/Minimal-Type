@@ -11,7 +11,7 @@ public class CherryBrown extends Item {
     // MODIFIES: game
     // EFFECTS: Removes all periods from currentParagraph in game
     @Override
-    public void perfromAbility(Game game) {
-        game.currentParagraph.removePeriods();
+    public boolean perfromAbility(Game game) {
+        return game.currentParagraph.removePeriods();
     }
 }

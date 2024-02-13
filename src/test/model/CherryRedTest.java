@@ -28,7 +28,7 @@ public class CherryRedTest {
         game.initializeGame(1);
         assertEquals(0, game.getPosition());
 
-        cherryRed.perfromAbility(game);
+        assertTrue(cherryRed.perfromAbility(game));
 
         assertEquals( 15, game.getPosition());
     }

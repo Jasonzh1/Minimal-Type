@@ -29,7 +29,7 @@ public class CherryBlueTest {
         int tempTime = game.getTimer();
         assertEquals(tempTime, game.getTimer());
 
-        cherryBlue.perfromAbility(game);
+        assertTrue(cherryBlue.perfromAbility(game));
 
         assertEquals(tempTime + 10, game.getTimer());
     }

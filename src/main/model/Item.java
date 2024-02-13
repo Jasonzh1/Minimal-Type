@@ -19,6 +19,6 @@ public abstract class Item {
         return description;
     }
 
-    public abstract void perfromAbility(Game game);
+    public abstract boolean perfromAbility(Game game);
 
 }

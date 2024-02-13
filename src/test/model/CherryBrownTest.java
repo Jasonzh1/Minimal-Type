@@ -30,7 +30,7 @@ public class CherryBrownTest {
         para.removePeriods();
         assertEquals(para, game.getCurrentParagraph());
 
-        cherryBrown.perfromAbility(game);
+        assertTrue(cherryBrown.perfromAbility(game));
 
         assertEquals(para.getUntypedPortion(), game.getUntypedPortion());
     }
