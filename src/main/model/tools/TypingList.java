@@ -9,14 +9,15 @@ import java.util.List;
 
 // Represents list of excerpts that players will type
 public class TypingList {
-    private final List<String> excerpts = Files.readAllLines(Path.of("src/excerpts.txt"));
-    private final List<String> authors = Files.readAllLines(Path.of("src/authors.txt"));
-    private final Random random = new Random();
+    private List<String> excerpts;
+    private List<String> authors;
+    private static final Random random = new Random();
 
     // MODIFIES: this
     // EFFECTS: Initializes new TypingList
     public TypingList() throws IOException {
-
+        excerpts = Files.readAllLines(Path.of("src/excerpts.txt"));
+        authors = Files.readAllLines(Path.of("src/authors.txt"));
     }
 
     // EFFECTS: Returns random excerpt from list as a Paragraph
