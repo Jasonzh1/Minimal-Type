@@ -17,10 +17,15 @@ public class TypingListTest {
 
 
     @Test
+    void typingListTest() throws IOException {
+        TypingList tester2 = new TypingList();
+    }
+
+
+    @Test
     void getNewExcerptTest() {
-        assertNotNull(tester.getNewExcerpt());
-        assertNotNull(tester.getNewExcerpt().getParagraph());
-        assertNotNull(tester.getNewExcerpt().getNextCharacter());
+        assertNotEquals("", tester.getNewExcerpt().getParagraph());
+        assertNotEquals(' ', tester.getNewExcerpt().getNextCharacter());
     }
 
 }

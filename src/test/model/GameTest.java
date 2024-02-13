@@ -33,6 +33,13 @@ public class GameTest {
     }
 
     @Test
+    void initializeGameTest2() {
+        assertFalse(tester.isEnded());
+        tester.initializeGame(7);
+        assertTrue(tester.isEnded());
+    }
+
+    @Test
     void tickTest() {
         tester.initializeGame(2);
         int currentTime = tester.getTimer();
@@ -43,5 +50,28 @@ public class GameTest {
 
         assertEquals(currentTime-1, tester.getTimer());
         assertTrue(tester.isInGame());
+    }
+
+
+    @Test
+    void handleInputTest() {
+        tester.initializeGame(1);
+        tester.handleInput('d');
+    }
+
+    @Test
+    void resetTimerTest() {
+        assertEquals(-1, tester.getTimer());
+        tester.initializeGame(1);
+        assertNotEquals(-1, tester.getTimer());
+
+        tester.resetTimer();
+        assertEquals(-1, tester.getTimer());
+    }
+
+    @Test
+    void getAuthorTest() {
+        tester.initializeGame(1);
+        assertNotEquals("", tester.getAuthor());
     }
 }
