@@ -12,11 +12,9 @@ public class CherryRed extends Item {
     // MODIFIES: game
     // EFFECTS: Increases the position of paragraph by 15
     @Override
-    public boolean perfromAbility(Game game) {
-        boolean state = true;
+    public void perfromAbility(Game game) {
         for (int i = 0; i < 15; i++) {
-            state = state && game.currentParagraph.typeCharacter();
+            game.currentParagraph.typeCharacter();
         }
-        return state;
     }
 }

@@ -8,7 +8,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CherryRedTest {
-    Item cherryRed;
+    CherryRed cherryRed;
 
     @BeforeEach
     void setCherryBlue() {
@@ -28,7 +28,7 @@ public class CherryRedTest {
         game.initializeGame(1);
         assertEquals(0, game.getPosition());
 
-        assertTrue(cherryRed.perfromAbility(game));
+        cherryRed.perfromAbility(game);
 
         assertEquals( 15, game.getPosition());
     }

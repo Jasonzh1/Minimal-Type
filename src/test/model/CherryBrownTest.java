@@ -8,7 +8,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CherryBrownTest {
-    Item cherryBrown;
+    CherryBrown cherryBrown;
 
     @BeforeEach
     void setCherryBlue() {
@@ -30,7 +30,7 @@ public class CherryBrownTest {
         para.removePeriods();
         assertEquals(para, game.getCurrentParagraph());
 
-        assertTrue(cherryBrown.perfromAbility(game));
+        cherryBrown.perfromAbility(game);
 
         assertEquals(para.getUntypedPortion(), game.getUntypedPortion());
     }

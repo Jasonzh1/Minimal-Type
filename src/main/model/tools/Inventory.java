@@ -25,16 +25,16 @@ public class Inventory {
 
         switch (num) {
             case 0:
-                return false;
-            case 1:
                 items.add(new CherryBlue());
+                break;
+            case 1:
+                items.add(new CherryBrown());
                 break;
             case 2:
                 items.add(new CherryRed());
                 break;
-            case 3:
-                items.add(new CherryBrown());
-                break;
+            default:
+                return false;
         }
         return true;
     }

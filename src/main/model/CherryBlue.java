@@ -11,8 +11,7 @@ public class CherryBlue extends Item {
     // MODIFIES: game
     // EFFECTS: Increases the timer by 10
     @Override
-    public boolean perfromAbility(Game game) {
+    public void perfromAbility(Game game) {
         game.timer += 10;
-        return true;
     }
 }

@@ -52,9 +52,8 @@ public class Paragraph {
 
     // MODIFIES: this
     // EFFECTS: Removes all periods from paragraph
-    public boolean removePeriods() {
+    public void removePeriods() {
         paragraph = paragraph.replace(".", "");
-        return true;
     }
 
     public int getIndex() {
