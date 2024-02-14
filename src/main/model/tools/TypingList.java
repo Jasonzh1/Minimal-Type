@@ -1,5 +1,4 @@
-package model;
-
+package model.tools;
 
 import java.util.*;
 import java.nio.file.Files;

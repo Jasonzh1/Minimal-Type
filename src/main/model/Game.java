@@ -1,5 +1,9 @@
 package model;
 
+import model.tools.InputHandler;
+import model.tools.Paragraph;
+import model.tools.TypingList;
+
 import java.io.IOException;
 import java.nio.file.Path;
 

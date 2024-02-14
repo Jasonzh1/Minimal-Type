@@ -1,5 +1,6 @@
 package model;
 
+import model.tools.Paragraph;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;

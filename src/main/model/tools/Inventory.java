@@ -1,5 +1,9 @@
-package model;
+package model.tools;
 
+import model.CherryBlue;
+import model.CherryBrown;
+import model.CherryRed;
+import model.Item;
 
 import java.util.ArrayList;
 import java.util.List;

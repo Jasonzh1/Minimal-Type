@@ -1,5 +1,6 @@
 package model;
 
+import model.tools.Inventory;
 import org.junit.jupiter.api.*;
 
 
