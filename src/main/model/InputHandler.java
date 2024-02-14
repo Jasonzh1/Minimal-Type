@@ -1,4 +1,4 @@
-package model.tools;
+package model;
 
 // Handles user input
 public class InputHandler {

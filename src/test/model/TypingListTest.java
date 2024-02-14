@@ -1,6 +1,5 @@
 package model;
 
-import model.tools.TypingList;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;

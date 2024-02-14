@@ -8,7 +8,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import model.Game;
 import model.Item;
-import model.tools.Inventory;
+import model.Inventory;
 
 import java.io.IOException;
 

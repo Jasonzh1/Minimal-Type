@@ -1,4 +1,4 @@
-package model.tools;
+package model;
 
 // Paragraph that appears in the typing environment. Keeps track of current typing position.
 public class Paragraph {
