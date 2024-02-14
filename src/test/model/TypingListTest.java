@@ -19,14 +19,15 @@ public class TypingListTest {
 
     @BeforeEach
     void setTester() throws IOException{
-        tester = new TypingList();
-        excerptTest = Files.readAllLines(Path.of("src/excerpts.txt"));
+        excerptTest = Files.readAllLines(Path.of("src/tester.txt"));
         authorTest = Files.readAllLines(Path.of("src/authors.txt"));
+
+        tester = new TypingList(Path.of("src/tester.txt"), Path.of("src/authors.txt"));
     }
 
 
     @Test
-    void typingListTest() throws IOException {
+    void typingListTest() {
         assertNotNull(tester.getExcerpts());
         assertNotNull(tester.getAuthors());
         assertEquals(excerptTest, tester.getExcerpts());

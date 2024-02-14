@@ -5,6 +5,7 @@ import model.tools.Paragraph;
 import model.tools.TypingList;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 // Handles game behavior every tick
 public class Game {
@@ -27,7 +28,7 @@ public class Game {
         this.timer = -1;
 
         this.inputHandler = new InputHandler();
-        this.typingList = new TypingList();
+        this.typingList = new TypingList(Path.of("src/excerpts.txt"), Path.of("src/authors.txt"));
         this.currentParagraph = null;
     }
 
