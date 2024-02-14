@@ -1,5 +1,6 @@
 package model;
 
+import model.tools.Paragraph;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;
@@ -63,6 +64,17 @@ public class GameTest {
 
         assertEquals(0, tester.getTimer());
         assertFalse(tester.isInGame());
+    }
+
+    @Test
+    void tickTest3() {
+        tester.initializeGame(1);
+        Paragraph currentParagraph = tester.getCurrentParagraph();
+
+        for (int i = 0; i < 500; i++) {
+            currentParagraph.typeCharacter();
+        }
+        tester.tick();
     }
 
 
