@@ -15,8 +15,8 @@ public class TypingList {
 
     // MODIFIES: this
     // EFFECTS: Initializes new TypingList
-    public TypingList(Path exceprt, Path author) throws IOException {
-        excerpts = Files.readAllLines(exceprt);
+    public TypingList(Path excerpt, Path author) throws IOException {
+        excerpts = Files.readAllLines(excerpt);
         authors = Files.readAllLines(author);
     }
 
