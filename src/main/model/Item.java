@@ -1,5 +1,7 @@
 package model;
 
+
+// Abstract class representing an item
 public abstract class Item {
     private final String name;
     private final String description;

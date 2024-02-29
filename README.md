@@ -14,4 +14,6 @@ keyboards.
 - As a user, I want to be able to pickup items and add them to an inventory.
 - As a user, I want to be able to view a list of items in my inventory.
 - As a user, I want to be able to have a smooth typing interface to fight bosses.
+- As a user, I want to be able to save my current game progress (inventory, highscores, etc).
+- As a user, I want to be able to select a game load file that I can resume playing.
 

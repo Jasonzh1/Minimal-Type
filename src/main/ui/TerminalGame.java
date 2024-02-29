@@ -79,6 +79,7 @@ public class TerminalGame {
         char c = stroke.getCharacter();
         if (game.isInGame()) {
             game.handleInput(c);
+            return;
         }
 
         int select = c - '0';

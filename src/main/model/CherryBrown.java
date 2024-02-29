@@ -1,5 +1,7 @@
 package model;
 
+
+// Item that removes all periods from paragraph when used
 public class CherryBrown extends Item {
 
     // EFFECTS: Initializes Cherry Brown item with name and description

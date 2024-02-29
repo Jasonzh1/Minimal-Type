@@ -1,5 +1,7 @@
 package model;
 
+
+// Item that gives 10 more seconds when used
 public class CherryBlue extends Item {
 
     // EFFECTS: Initializes Cherry Blue item with name and description

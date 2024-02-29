@@ -1,6 +1,6 @@
 package model;
 
-
+// Item that increases position of paragraph when used
 public class CherryRed extends Item {
 
     // EFFECTS: Initializes Cherry Red item with name and description

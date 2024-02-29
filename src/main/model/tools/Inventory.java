@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// Keeps an inventory of current items and adds new items
 public class Inventory {
     private List<Item> items;
     private final Random random = new Random();
