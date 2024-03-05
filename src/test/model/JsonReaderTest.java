@@ -13,7 +13,7 @@ public class JsonReaderTest {
 
     @BeforeEach
     void setUp() {
-        String[] testFiles = {"data/testNoItems.json", "data/testTwoItems.json"};
+        String[] testFiles = {"data/testNoItems.json", "data/testTwoItems.json", "data/testWrongName.json"};
         tester = new JsonReader(testFiles);
     }
 
@@ -32,6 +32,15 @@ public class JsonReaderTest {
             assertEquals(2, tester.read(1).length());
             assertTrue(tester.read(1).getItem(0) instanceof CherryBlue);
             assertTrue(tester.read(1).getItem(1) instanceof CherryRed);
+        } catch (IOException e) {
+            fail();
+        }
+    }
+
+    @Test
+    void testRead3() {
+        try {
+            assertEquals(0, tester.read(2).length());
         } catch (IOException e) {
             fail();
         }
