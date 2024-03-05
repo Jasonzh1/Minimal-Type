@@ -1,8 +1,11 @@
 package model;
 
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Abstract class representing an item
-public abstract class Item {
+public abstract class Item implements Writable {
     private final String name;
     private final String description;
 
@@ -21,6 +24,17 @@ public abstract class Item {
         return description;
     }
 
+    // REQUIRES: Game that just entered 'inGame' with no calls to tick()
+    // MODIFIES: game
+    // EFFECTS: Performs specified ability on game
     public abstract void perfromAbility(Game game);
+
+    // EFFECTS: returns this as JSON object
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("type", name);
+        return json;
+    }
 
 }

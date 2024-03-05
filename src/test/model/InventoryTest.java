@@ -52,4 +52,19 @@ public class InventoryTest {
 
         assertNotNull(tester.useItem(0));
     }
+
+    @Test
+    void addItemTest() {
+        Item temp = new CherryBrown();
+        tester.addItem(temp);
+        assertEquals(1, tester.length());
+        assertEquals(temp, tester.getItem(0));
+    }
+
+    @Test
+    void toJsonTest() {
+        tester.addItem(new CherryBrown());
+        assertEquals("{\"items\":[{\"type\":\"Cherry MX Brown\"}]}",
+                tester.toJson().toString());
+    }
 }

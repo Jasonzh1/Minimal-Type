@@ -30,14 +30,6 @@ public class GameTest {
 
         assertNotEquals(-1, tester.getTimer());
         assertTrue(tester.isInGame());
-        assertFalse(tester.isEnded());
-    }
-
-    @Test
-    void initializeGameTest2() {
-        assertFalse(tester.isEnded());
-        tester.initializeGame(7);
-        assertTrue(tester.isEnded());
     }
 
     @Test
@@ -75,6 +67,7 @@ public class GameTest {
             currentParagraph.typeCharacter();
         }
         tester.tick();
+        assertFalse(tester.isInGame());
     }
 
 
@@ -82,6 +75,7 @@ public class GameTest {
     void handleInputTest() {
         tester.initializeGame(1);
         tester.handleInput('d');
+        assertTrue(tester.isInGame());
     }
 
     @Test

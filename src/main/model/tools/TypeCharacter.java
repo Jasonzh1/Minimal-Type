@@ -1,11 +1,11 @@
 package model.tools;
 
-// Handles user input
-public class InputHandler {
+// Compares input value to next value in paragraph. Types character if equal.
+public class TypeCharacter {
     private Paragraph currentParagraph;
 
     // EFFECTS: Initializes input handler with no paragraph
-    public InputHandler() {
+    public TypeCharacter() {
         this.currentParagraph = null;
     }
 

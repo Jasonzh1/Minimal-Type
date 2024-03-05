@@ -41,4 +41,9 @@ public class CherryBlueTest {
         assertEquals(time1 + 10, testGame.getTimer());
         assertEquals(time2 + 10, testGame2.getTimer());
     }
+
+    @Test
+    void toJsonTest() {
+        assertEquals("{\"type\":\"Cherry MX Blue\"}", cherryBlue.toJson().toString());
+    }
 }

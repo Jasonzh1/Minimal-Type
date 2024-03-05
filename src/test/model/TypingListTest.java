@@ -19,10 +19,10 @@ public class TypingListTest {
 
     @BeforeEach
     void setTester() throws IOException{
-        excerptTest = Files.readAllLines(Path.of("src/tester.txt"));
-        authorTest = Files.readAllLines(Path.of("src/authors.txt"));
+        excerptTest = Files.readAllLines(Path.of("data/tester.txt"));
+        authorTest = Files.readAllLines(Path.of("data/authors.txt"));
 
-        tester = new TypingList(Path.of("src/tester.txt"), Path.of("src/authors.txt"));
+        tester = new TypingList(Path.of("data/tester.txt"), Path.of("data/authors.txt"));
     }
 
 

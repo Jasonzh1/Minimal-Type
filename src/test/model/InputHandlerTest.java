@@ -1,6 +1,6 @@
 package model;
 
-import model.tools.InputHandler;
+import model.tools.TypeCharacter;
 import model.tools.Paragraph;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InputHandlerTest {
-    InputHandler tester;
+    TypeCharacter tester;
     List<Paragraph> testExcerpts = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
-        tester = new InputHandler();
+        tester = new TypeCharacter();
         testExcerpts.add(new Paragraph("Hello.", "Jason"));
         testExcerpts.add(new Paragraph("What's up!", "JJ"));
         testExcerpts.add(new Paragraph("How are you?", "Dennis"));

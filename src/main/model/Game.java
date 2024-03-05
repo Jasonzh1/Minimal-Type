@@ -1,6 +1,6 @@
 package model;
 
-import model.tools.InputHandler;
+import model.tools.TypeCharacter;
 import model.tools.Paragraph;
 import model.tools.TypingList;
 
@@ -16,9 +16,7 @@ public class Game {
     protected int timer;
     private int counter;
 
-    private boolean gameOver = false;
-
-    private final InputHandler inputHandler;
+    private final TypeCharacter inputHandler;
     private final TypingList typingList;
     protected Paragraph currentParagraph;
 
@@ -27,8 +25,8 @@ public class Game {
         this.inGame = false;
         this.timer = -1;
 
-        this.inputHandler = new InputHandler();
-        this.typingList = new TypingList(Path.of("src/excerpts.txt"), Path.of("src/authors.txt"));
+        this.inputHandler = new TypeCharacter();
+        this.typingList = new TypingList(Path.of("data/tester.txt"), Path.of("data/authors.txt"));
         this.currentParagraph = null;
     }
 
@@ -37,10 +35,6 @@ public class Game {
     // EFFECTS: Begins game with new paragraph and sets difficulty. Ends game if 7 is
     // selected
     public void initializeGame(int select) {
-        if (select == 7) {
-            gameOver = true;
-            return;
-        }
         currentParagraph = typingList.getNewExcerpt();
         inputHandler.setCurrentParagraph(currentParagraph);
 
@@ -97,10 +91,6 @@ public class Game {
 
     public boolean isInGame() {
         return inGame;
-    }
-
-    public boolean isEnded() {
-        return gameOver;
     }
 
     public int getTimer() {
