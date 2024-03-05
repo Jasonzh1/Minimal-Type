@@ -36,6 +36,13 @@ public class InventoryTest {
         tester.addRandomItem();
         tester.addRandomItem();
         tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
 
 
         assertNotEquals(0, tester.length());
