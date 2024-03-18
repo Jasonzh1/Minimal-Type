@@ -15,6 +15,7 @@ import persistence.JsonWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+// Updates game state every tick
 public class TerminalGame {
     private static final String[] JSON_STORE = {"./data/save1.json", "./data/save1.json", "./data/save1.json"};
     private JsonReader jsonReader;
@@ -181,6 +182,7 @@ public class TerminalGame {
         }
     }
 
+    // EFFECTS: Renders load environment
     private void renderLoad() {
         if (inLoad) {
             drawString("Select Save File:", TextColor.ANSI.WHITE, 10, 10);
@@ -195,6 +197,7 @@ public class TerminalGame {
         drawString("4. Exit to Menu", TextColor.ANSI.WHITE, 10, 23);
     }
 
+    // EFFECTS: Renders inventory environment
     private void renderInventory() {
         drawString("Current Items:", TextColor.ANSI.WHITE, 10, 10);
         Item currentItem;
