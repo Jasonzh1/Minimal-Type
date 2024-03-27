@@ -9,7 +9,6 @@ import java.nio.file.Path;
 
 // Handles game behavior every tick
 public class Game {
-    public static final int TICKS_PER_SECOND = 60;
     public static final int[] WORDS_PER_MINUTE = {15, 30, 50, 80, 100};
 
     private boolean inGame;
@@ -48,7 +47,7 @@ public class Game {
     // EFFECTS: Ticks timer and checks current game state.
     public void tick() {
         counter++;
-        if (counter >= 45) {
+        if (counter >= 100) {
             timer--;
             counter = 0;
         }
