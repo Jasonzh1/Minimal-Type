@@ -20,6 +20,12 @@ public class InventoryTest {
         assertEquals(0, tester.length());
     }
 
+    @Test
+    void testRemoveItem() {
+        tester.addItem(new CherryBrown());
+        tester.removeItem(0);
+        assertEquals(0, tester.length());
+    }
 
     @Test
     void addRandomItemTest() {
@@ -43,6 +49,14 @@ public class InventoryTest {
         tester.addRandomItem();
         tester.addRandomItem();
         tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+        tester.addRandomItem();
+
 
 
         assertNotEquals(0, tester.length());
