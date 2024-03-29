@@ -17,3 +17,9 @@ keyboards.
 - As a user, I want to be able to save my current game progress (inventory, etc).
 - As a user, I want to be able to select a game load file that I can resume playing.
 
+## Instructions For Grader
+- You can use an item in the inventory by clicking the item and clicking the plus symbol
+- You can delete an item in the inventory by clicking the item and clicking the trash symbol
+- You can locate my visual component by running the program (The loading screen)
+- You can save the state of my application by clicking save and selecting a save file
+- You can reload the state of my application by clicking load and selecting a load file

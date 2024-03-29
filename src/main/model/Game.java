@@ -9,7 +9,7 @@ import java.nio.file.Path;
 
 // Handles game behavior every tick
 public class Game {
-    public static final int[] WORDS_PER_MINUTE = {15, 30, 50, 80, 100};
+    public static final int[] WORDS_PER_MINUTE = {15, 30, 45, 60, 75};
 
     private boolean inGame;
     protected int timer;
@@ -25,7 +25,7 @@ public class Game {
         this.timer = -1;
 
         this.inputHandler = new TypeCharacter();
-        this.typingList = new TypingList(Path.of("data/tester.txt"), Path.of("data/authors.txt"));
+        this.typingList = new TypingList(Path.of("data/excerpts.txt"), Path.of("data/authors.txt"));
         this.currentParagraph = null;
     }
 

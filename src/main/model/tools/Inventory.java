@@ -44,6 +44,12 @@ public class Inventory implements Writable {
     }
 
     // MODIFIES: this
+    // EFFECTS: Removes item at index
+    public void removeItem(int index) {
+        items.remove(index);
+    }
+
+    // MODIFIES: this
     // EFFECTS: Adds given item to end of inventory
     public void addItem(Item item) {
         items.add(item);

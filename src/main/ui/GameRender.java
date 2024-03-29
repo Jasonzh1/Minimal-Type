@@ -11,6 +11,8 @@ public class GameRender extends JPanel {
     private final Game game;
     private static final Font font = new Font("Gill Sans MT", Font.PLAIN, 20);
 
+    private boolean cursor;
+
     // Creates new game environment
     public GameRender(Game game) {
         Dimension scrn = Toolkit.getDefaultToolkit().getScreenSize();
@@ -18,6 +20,7 @@ public class GameRender extends JPanel {
         setBackground(Color.BLACK);
 
         this.game = game;
+        this.cursor = false;
     }
 
     // Taken from B02-Spaceinvaders
@@ -45,5 +48,15 @@ public class GameRender extends JPanel {
         g.setColor(new Color(255, 255, 255));
         g.drawString(untyped, 100, 400);
         g.drawString("- " + game.getAuthor(), 150, 500);
+
+        if (cursor) {
+            g.fillRect(100, 405, 8, 2);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Changes cursor state
+    public void blink() {
+        cursor = !cursor;
     }
 }

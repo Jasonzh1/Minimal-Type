@@ -14,6 +14,7 @@ import java.io.IOException;
 // Main window where game is played
 public class TypingGame extends JFrame {
     private static final int INTERVAL = 10;
+    private int blinker;
 
     private final GameRender gameRender;
     private final Menu menu;
@@ -22,10 +23,12 @@ public class TypingGame extends JFrame {
 
     private final Game game;
     private final Inventory inventory;
+    private final StartScreen screen;
 
 
+    // Creates new instance of TypingGame
     public TypingGame() throws IOException {
-        super("True Type");
+        super("Minimal Type");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(false);
 
@@ -33,6 +36,8 @@ public class TypingGame extends JFrame {
         this.inventory = new Inventory();
         this.gameRender = new GameRender(game);
         this.menu = new Menu(game, inventory);
+        this.blinker = 0;
+        this.screen = new StartScreen();
 
         this.cardLayout = new CardLayout();
         this.cardPane = getContentPane();
@@ -40,14 +45,17 @@ public class TypingGame extends JFrame {
 
         cardPane.add("game", gameRender);
         cardPane.add("menu", menu);
+        cardPane.add("screen", screen);
 
         cardLayout.show(cardPane, "menu");
 
         addKeyListener(new KeyHandler());
+        setFocusable(true);
         pack();
         centreOnScreen();
         setVisible(true);
         addTimer();
+
     }
 
     // Set up timer
@@ -56,7 +64,18 @@ public class TypingGame extends JFrame {
     //           INTERVAL milliseconds
     private void addTimer() {
         Timer t = new Timer(INTERVAL, ae -> {
-            if (game.isInGame()) {
+            if (!screen.isFinished()) {
+                blinker++;
+                if (blinker % 30 == 0) {
+                    screen.blink();
+                }
+                cardLayout.show(cardPane, "screen");
+                screen.repaint();
+            } else if (game.isInGame()) {
+                blinker++;
+                if (blinker % 30 == 0) {
+                    gameRender.blink();
+                }
                 game.tick();
                 cardLayout.show(cardPane, "game");
                 gameRender.repaint();
@@ -79,17 +98,17 @@ public class TypingGame extends JFrame {
 
 
     // Taken from B02-SpaceInvaders
-    // A key handler to respond to key events
+    // EFFECTS: A key handler to respond to key events
     private class KeyHandler extends KeyAdapter {
         // MODIFIES: game
         // EFFECTS: A key handler to respond to key events
         @Override
         public void keyPressed(KeyEvent e) {
             char c = e.getKeyChar();
-            if (game.isInGame()) {
+            if (!screen.isFinished()) {
+                screen.typeCharacter(c);
+            } else if (game.isInGame()) {
                 game.handleInput(c);
-            } else {
-                menu.handleInput(c);
             }
         }
     }
