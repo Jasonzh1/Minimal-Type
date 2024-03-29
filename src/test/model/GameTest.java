@@ -37,7 +37,7 @@ public class GameTest {
         tester.initializeGame(2);
         int currentTime = tester.getTimer();
 
-        for (int i = 0; i < 45; i++) {
+        for (int i = 0; i < 100; i++) {
             tester.tick();
         }
 
@@ -50,7 +50,7 @@ public class GameTest {
         tester.initializeGame(2);
         int currentTime = tester.getTimer();
 
-        for (int i = 0; i < currentTime * 45; i++) {
+        for (int i = 0; i < currentTime * 100; i++) {
             tester.tick();
         }
 
