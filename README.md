@@ -33,3 +33,17 @@ keyboards.
 * Completing level added new Cherry Brown item to Inventory
 * Wed Apr 03 01:37:23 PDT 2024
 * User consumed Cherry MX Brown item from Inventory
+
+## Phase 4: Task 3
+If I had more time to work on the project the biggest change I would make would be to isolate
+the UI and model packages even further. Currently, TypingGame has a field of type Inventory,
+which is a tool in the model package. But TypingGame is supposed to represent the JFrame, which
+contains the different JPanels to render the game. So according to the Single Responsibility Principle, 
+TypingGame should not have access to anything relating to the behaviour of the game. This change would 
+improve the cohesion of the program.
+
+A second change I want to make is extracting a lot of the behavior of the Menu class into the model package.
+The Menu class regrettably handles a lot of the game's behavior, but it is part of the UI, so it should not
+be dealing with game behavior. I would refactor by extracting different methods into a new class in the model package.
+The only thing that should remain in Menu is code relating to the rendering and UI of the menu. These two
+changes would allow my project to better follow Object-Oriented Design Principles like cohesion and coupling. 
