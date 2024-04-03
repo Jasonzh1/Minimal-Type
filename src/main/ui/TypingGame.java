@@ -6,13 +6,17 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import model.Event;
+import model.EventLog;
 import model.Game;
 import model.tools.Inventory;
 
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.IOException;
 
 // Main window where game is played
-public class TypingGame extends JFrame {
+public class TypingGame extends JFrame implements WindowListener {
     private static final int INTERVAL = 10;
     private int blinker;
 
@@ -50,6 +54,7 @@ public class TypingGame extends JFrame {
         cardLayout.show(cardPane, "menu");
 
         addKeyListener(new KeyHandler());
+        addWindowListener(this);
         setFocusable(true);
         pack();
         centreOnScreen();
@@ -94,6 +99,51 @@ public class TypingGame extends JFrame {
     private void centreOnScreen() {
         Dimension scrn = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((scrn.width - getWidth()) / 2, (scrn.height - getHeight()) / 2);
+    }
+
+    // effects: no effect
+    @Override
+    public void windowOpened(WindowEvent e) {
+        // Ignore
+    }
+
+    // effects: Prints out EventLog on window closing
+    @Override
+    public void windowClosing(WindowEvent e) {
+        EventLog events = EventLog.getInstance();
+        for (Event event : events) {
+            System.out.println(event.toString());
+        }
+    }
+
+    // effects: no effect
+    @Override
+    public void windowClosed(WindowEvent e) {
+        // Ignore
+    }
+
+    // effects: no effect
+    @Override
+    public void windowIconified(WindowEvent e) {
+        // Ignore
+    }
+
+    // effects: no effect
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+        // Ignore
+    }
+
+    // effects: no effect
+    @Override
+    public void windowActivated(WindowEvent e) {
+        // Ignore
+    }
+
+    // effects: no effect
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        // Ignore
     }
 
 

@@ -1,9 +1,6 @@
 package model.tools;
 
-import model.CherryBlue;
-import model.CherryBrown;
-import model.CherryRed;
-import model.Item;
+import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -26,16 +23,20 @@ public class Inventory implements Writable {
     // EFFECTS: 75% chance of a random item added to inventory. True if item is added, false otherwise
     public boolean addRandomItem() {
         int num = random.nextInt(4);
+        EventLog events = EventLog.getInstance();
 
         switch (num) {
             case 0:
                 items.add(new CherryBlue());
+                events.logEvent(new Event("Completing level added new Cherry Blue item to Inventory"));
                 break;
             case 1:
                 items.add(new CherryBrown());
+                events.logEvent(new Event("Completing level added new Cherry Brown item to Inventory"));
                 break;
             case 2:
                 items.add(new CherryRed());
+                events.logEvent(new Event("Completing level added new Cherry Red item to Inventory"));
                 break;
             default:
                 return false;
@@ -46,6 +47,8 @@ public class Inventory implements Writable {
     // MODIFIES: this
     // EFFECTS: Removes item at index
     public void removeItem(int index) {
+        EventLog events = EventLog.getInstance();
+        events.logEvent(new Event("User deleted " + items.get(index).getName() + " item from Inventory"));
         items.remove(index);
     }
 
@@ -59,6 +62,8 @@ public class Inventory implements Writable {
     // MODIFIES: this
     // EFFECTS: Removes item from list. Returns that item.
     public Item useItem(int index) {
+        EventLog events = EventLog.getInstance();
+        events.logEvent(new Event("User consumed " + items.get(index).getName() + " item from Inventory"));
         return items.remove(index);
     }
 
